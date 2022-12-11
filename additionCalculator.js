@@ -9,9 +9,9 @@ function additionCalculator(...numbers) {
     case 2:
       return arg[0] + arg[1];
     default:
-      console.log("The function only support up to 2 numbers only.");
+      return "There is a problem with the arguments, please try again";
   }
 }
-additionCalculator(1, 4);
+additionCalculator(1, 4, 7);
 
 module.exports = additionCalculator;
