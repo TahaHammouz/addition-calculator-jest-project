@@ -16,7 +16,6 @@ describe("additionCalculator's test cases", () => {
       expect(error.message).toBe("negatives not allowed,you entered :" + num1);
     }
   });
-
   test("both numbers are negative", () => {
     let num1 = String(-1);
     let num2 = String(-2);
@@ -60,4 +59,24 @@ describe("additionCalculator's test cases", () => {
       "There is a problem with the arguments, please try again"
     );
   });
+});
+
+test("one argument has over 1000", () => {
+  let num1 = String(1001);
+  expect(additionCalculator(num1)).toBe("0");
+});
+test("first number has over 1000", () => {
+  let num1 = String(1001);
+  let num2 = String(1);
+  expect(additionCalculator(num1, num2)).toBe(num2);
+});
+test("second number has over 1000", () => {
+  let num1 = String(1);
+  let num2 = String(1001);
+  expect(additionCalculator(num1, num2)).toBe(num1);
+});
+test("both numbers has over 1000", () => {
+  let num1 = String(1000);
+  let num2 = String(1001);
+  expect(additionCalculator(num1, num2)).toBe("0");
 });
